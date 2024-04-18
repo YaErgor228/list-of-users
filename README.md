@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Сайт с списком пользователей
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+На сайте есть 6 пользователей которым можно отправить запрос в друзья. Для этого нажмите на плюс рядом с теми кого хотите добавить и нажмите на кнопку "Отправить приглашение".
+После отправления приглошений высветистя окошко об удачном отправлении запросов с кнопкой "Назад" при нажатии на которую страница перезагрузится и ты вернёшся к списку пользователей.
+Если нажал не на того кого хотел или перехотел ему отправлять запрос после нажатия на плюс рядом с пользователем появится минус при нажатия на который пользователь удалится из списка людей которым ты хочешь отправить запрос дружбы.
+Если надо найти отдельного человека среди 6 пользователей можешь ввести поисковую строку которая находится выше ввест имя и фамилию пользователя или его эмаил.
 
-## Available Scripts
+## Как запустить
 
-In the project directory, you can run:
+Для запуска нужно:
+1.Скачать проект.
+2.Открыть консоль и перйти в папку с проектом.
+3.Прописать команду "npm start".
+4.Высветится ссылка "http://localhost:3***". Перейдите по этой ссылке.
 
-### `npm start`
+## Как редактировать
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Вся основная начинка "начинка" сайта находится в папке src. Запускается сайт при помощи файла App.js, а также там находится основная логика сайта.
+### Функции и хуки в App.js
+#### Хуки
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+users, setUsers отвечает за хранение пользователей.
+isLoading, setIsLoading отвечает за загрузку. При значение true сайт будет отображать 3 заглужки. Если значение false то сайт отображает пользователей.
+searchValue, setSearchValue отвечает за ввод в поисковую строку.
+invites, setInvites хранит пользователей которым потом можно кинуть запрос в друзья.
+success, setSuccess при значении true выводит оповещение о успешной отправке запросов дружбы.
+useEffect отправляет запрос на сервер через fetch и записывает пользователей в users через setUsers.
 
-### `npm test`
+#### Функции
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+onChangeSearchValue отвечает за ввод в поисковую строку.
+onClickSendInvites устанавливает sussess на true через setSuccess и выводит оповещение о успешной отправке запросов дружбы.
+onClickInvite отвечает за добавление пользователей в invites при нажатии на плюсик иудаление на минус при нажатии на минус.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
